@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Student</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f8f9fa;
+        }
+        .sidebar {
+            height: 100vh;
+            background-color: #343a40;
+            padding-top: 20px;
+            color: white;
+        }
+        .sidebar a {
+            color: #ddd;
+            display: block;
+            padding: 10px 15px;
+            text-decoration: none;
+        }
+        .sidebar a:hover {
+            background-color: #495057;
+            color: white;
+        }
+        .content {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <nav class="col-md-2 d-none d-md-block sidebar">
+            <h5 class="text-center">📘 Student Manager</h5>
+            <hr>
+            <a th:href="@{/enrolled}">📄 View Students</a>
+            <a th:href="@{/enrolled/new}">➕ Add Student</a>
+        </nav>
+
+        <main class="col-md-10 ml-sm-auto px-4 content">
+            <h2 class="mt-4 mb-4">Edit Student</h2>
+            <form th:action="@{/enrolled/edit/{id}(id=${student.id})}" th:object="${student}" method="post">
+                <div class="form-group">
+                    <label>First Name</label>
+                    <input type="text" th:field="*{firstName}" class="form-control" placeholder="Enter first name">
+                </div>
+                <div class="form-group">
+                    <label>Last Name</label>
+                    <input type="text" th:field="*{lastName}" class="form-control" placeholder="Enter last name">
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" th:field="*{email}" class="form-control" placeholder="Enter email">
+                </div>
+                <button type="submit" class="btn btn-success">Update</button>
+            </form>
+        </main>
+    </div>
+</div>
+</body>
+</html>
