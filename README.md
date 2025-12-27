@@ -111,8 +111,8 @@ spring.application.name=StudManager
 server.port=8080
 
 spring.datasource.url=jdbc:mysql://localhost:3306/resume
-spring.datasource.username=root
-spring.datasource.password=Anonymous@qwertyui
+spring.datasource.username=root (your user name)
+spring.datasource.password= (your password)
 spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 
 spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQLDialect
